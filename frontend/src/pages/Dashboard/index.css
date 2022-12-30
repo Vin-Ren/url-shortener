@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .dashboard-container {
+        @apply flex flex-col;
+    }
+
+    .dashboard-container > .header {
+        @apply flex flex-row items-center justify-evenly;
+    }
+
+    .dashboard-title {
+        @apply text-4xl text-start font-bold;
+    }
+
+    .dashboard-container .add-shortener img {
+        @apply mt-2 h-10 w-10;
+    }
+
+    .dashboard-container .add-shortener:hover img {
+        @apply scale-110;
+    }
+
+    .dashboard-container .shorteners {
+        @apply flex flex-col items-center;
+    }
+    
+    .dashboard-container .shorteners.empty {
+        @apply text-5xl text-center text-slate-400 dark:text-slate-600 my-20;
+    }
+}

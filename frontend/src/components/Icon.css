@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .icon { /* Default */
+        @apply block h-6 w-6;
+        @apply transition-all duration-200;
+        @apply dark:invert-[90%]; 
+    }
+
+    .icon > .tooltip {
+        @apply absolute w-auto p-2 m-2 min-w-max sm:left-8 sm:align-middle rounded-md shadow-md;
+        @apply text-slate-600 bg-slate-200 dark:text-slate-400 dark:bg-slate-900 transition-all duration-100 scale-0 origin-left;
+    }
+
+    .icon:hover > img {
+        @apply scale-110;
+    }
+
+    .icon:hover > .tooltip {
+        @apply scale-100;
+    }
+}

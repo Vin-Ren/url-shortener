@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .dark-mode-switch {
+        @apply fixed right-10 bottom-10;
+        @apply border-4 border-slate-700 dark:border-slate-700 rounded-xl;
+        @apply active:blur-sm transition-all duration-300;
+    }
+    .dark-mode-switch .icon {
+        @apply h-8 w-8 m-1 md:h-12 md:w-12 md:m-2;
+        @apply transition-all duration-300;
+    }
+}

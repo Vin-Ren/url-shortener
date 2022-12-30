@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .delete-account-form {
+        @apply flex flex-col space-y-5 bg-white dark:bg-slate-800 max-w-lg;
+    }
+
+    .delete-account-form header {
+        @apply text-xl font-bold pb-2 border-b-2 border-slate-400 dark:border-slate-500;
+    }
+
+    .actions-container {
+        @apply flex flex-row items-start justify-between space-x-4 pt-4 border-t-2 border-slate-400 dark:border-slate-500 min-w-full max-w-[64px];
+    }
+
+    .actions-container button {
+        @apply text-slate-400 dark:text-slate-600 font-medium bg-inherit dark:text-inherit border-2 rounded-lg px-4 py-2;
+        @apply focus:outline-none focus:shadow-md hover:border-slate-500/50 focus:border-slate-500 transition duration-150;
+    }
+
+    .actions-container .cancel-button {
+        @apply text-black dark:text-white border-black dark:border-white;
+        @apply hover:border-transparent hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black;
+    }
+
+    .actions-container .confirm-button {
+        @apply text-red-700 dark:text-red-500 border-red-500;
+        @apply hover:border-transparent hover:bg-red-500 focus:border-red-500 hover:text-white;
+    }
+}

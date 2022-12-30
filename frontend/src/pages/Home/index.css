@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .home-page {
+        @apply flex flex-col space-y-12;
+    }
+
+    .home-page > .header {
+        @apply text-5xl font-bold text-left pb-10;
+    }
+
+    .home-page section {
+        @apply flex flex-col justify-evenly max-sm:space-y-8 sm:space-x-16 items-center;
+    }
+
+    .home-page section > p {
+        @apply relative text-2xl;
+    }
+
+    .logo-container {
+        @apply w-64 max-w-md p-4 rounded-lg bg-inherit min-w-fit max-h-fit;
+        @apply transition-all duration-500;
+    }
+
+    .logo {
+        @apply min-w-full dark:invert-[80%] transition-all duration-300;
+    }
+}

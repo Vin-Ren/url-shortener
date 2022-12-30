@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .shortener-form-container {
+        @apply flex flex-col;
+    }
+
+    .shortener-form-container > .header {
+        @apply flex flex-auto items-center space-x-6 mb-6;
+    }
+
+    .shortener-form-container .back-button {
+        @apply border-2 border-slate-700 rounded-md hover:bg-slate-700 dark:border-slate-200 hover:dark:bg-slate-700 transition duration-150;
+    }
+
+    .shortener-form-container .back-button img {
+        @apply dark:invert;
+    }
+
+    .shortener-form-container .back-button:hover img {
+        @apply scale-110 invert;
+    }
+
+    .shortener-form-title {
+        @apply text-4xl font-bold;
+    }
+
+    .shortener-form {
+        @apply flex flex-col min-w-max space-y-4 items-end;
+    }
+
+    .shortener-form .input-group {
+        @apply flex flex-col items-start space-y-2 min-w-full justify-between;
+    }
+
+    .shortener-form .input-group label {
+        @apply font-bold;
+    }
+
+    .shortener-form .input-group input {
+        @apply min-w-min w-full transition duration-300 focus:outline-none;
+    }
+
+    .shortener-form .input-group small {
+        @apply ml-2 text-sm text-slate-600 dark:text-slate-400 break-words max-w-md;
+    }
+
+    .shortener-form .submit-button {
+        @apply min-w-fit w-20 text-center;
+    }
+}

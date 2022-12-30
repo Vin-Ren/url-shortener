@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .backdrop {
+        @apply fixed inset-0 flex flex-col justify-center items-center backdrop-blur-sm bg-slate-200/30 dark:bg-slate-700/30;
+    }
+
+    .default-modal-container {
+        @apply flex flex-col max-w-3xl p-4 bg-white dark:bg-slate-700 ;
+        @apply outline rounded focus:outline-none outline-slate-200 dark:outline-slate-600;
+        @apply transition-all duration-300;
+        @apply relative w-auto;
+    }
+
+    .default-modal-container .close-button {
+        @apply mt-4;
+    }
+
+}

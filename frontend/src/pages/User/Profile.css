@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .profile {
+        @apply space-y-10;
+    }
+
+    .profile .header {
+        @apply text-5xl font-bold text-left border-b-4 pb-6 dark:border-slate-700/50;
+    }
+
+    .profile .actions-header {
+        @apply text-3xl font-bold text-left;
+    }
+
+    .profile section {
+        @apply flex flex-col justify-evenly space-y-8 mt-16 items-start;
+    }
+
+    .profile section > p {
+        @apply relative text-2xl;
+    }
+
+    .profile button {
+        @apply relative border-2 px-3 py-3 flex flex-row space-x-12 rounded-xl border-slate-300 hover:bg-slate-700 hover:border-transparent hover:text-white transition duration-150;
+    }
+
+    .profile button:hover img {
+        @apply invert;
+    }
+
+    .profile button.delete-account {
+        @apply border-red-700  hover:border-transparent hover:bg-red-600;
+    }
+}
