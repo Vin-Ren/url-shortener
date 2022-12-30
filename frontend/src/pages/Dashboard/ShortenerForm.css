@@ -15,6 +15,10 @@
         @apply border-2 border-slate-700 rounded-md hover:bg-slate-700 dark:border-slate-200 hover:dark:bg-slate-700 transition duration-150;
     }
 
+    .shortener-form-container form {
+        @apply flex flex-col items-center;
+    }
+
     .shortener-form-container .back-button img {
         @apply dark:invert;
     }
@@ -28,11 +32,11 @@
     }
 
     .shortener-form {
-        @apply flex flex-col min-w-max space-y-4 items-end;
+        @apply flex flex-col sm:min-w-full max-sm:min-w-fit space-y-4 items-end;
     }
 
     .shortener-form .input-group {
-        @apply flex flex-col items-start space-y-2 min-w-full justify-between;
+        @apply flex flex-col items-start space-y-2 min-w-full justify-between max-md:max-w-xs md:max-w-sm;
     }
 
     .shortener-form .input-group label {
