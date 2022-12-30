@@ -18,7 +18,7 @@ function verifyToken(req: Request, res: Response, next: NextFunction) {
     const decoded = jwt.verify(token, JWT_SECRET_TOKEN)
     req.user = (decoded as User)
   } catch (err) {
-    return res.sendStatus(401)
+    return res.sendStatus(403)
   }
   return next();
 };

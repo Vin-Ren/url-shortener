@@ -74,20 +74,32 @@ UserRouter.post("/login", async (req, res) => {
 
 UserRouter.delete("/delete_account", auth, async (req: Request, res) => {
   const { password }: { password: string } = req.body;
-  const user = await prismaClient.user.findFirst({where:{id:req.user?.id}}) || null;
+  const user = await prismaClient.user.findFirst({ where: { id: req.user?.id } }) || null;
   if (!(user)) {
     return res.sendStatus(403)
   }
-  if (!(password)|| !(await bcrypt.compare(password, user.passwordHash))) {
+  if (!(password) || !(await bcrypt.compare(password, user.passwordHash))) {
     return res.status(400).send("Invalid Credentials");
   }
 
   try {
-    const deleted = await prismaClient.user.delete({where:{id:user.id}})
+    const deleted = await prismaClient.user.delete({ where: { id: user.id } })
     return res.sendStatus(204)
   } catch (err) {
     return res.status(409).send("Please delete all shorteners first")
   }
+})
+
+
+UserRouter.get("/summary", auth, async (req: Request, res) => {
+  if (req.user === undefined) {
+    return res.sendStatus(403)
+  }
+  const user = await prismaClient.user.findFirst({ where: { id: req.user.id }, include: { _count: { select: { shorteners: true } }, shorteners: { select: { hits: true } } } })
+  if (!(user)) {
+    return res.sendStatus(403)
+  }
+  res.json({ id: user?.id, email: user?.email, shortener_count: user?._count.shorteners, shorteners_hits: user?.shorteners })
 })
 
 
